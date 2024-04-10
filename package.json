@@ -7,14 +7,26 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "ui": "npx --yes ui-thing@latest add"
   },
   "dependencies": {
+    "@firebase/app-types": "^0.9.1",
+    "@morev/vue-transitions": "^3.0.2",
+    "@vee-validate/nuxt": "^4.12.6",
+    "@vee-validate/yup": "^4.12.6",
+    "firebase": "^10.6.0",
+    "firebase-admin": "^11.11.1",
+    "firebase-functions": "^4.9.0",
     "nuxt": "^3.11.2",
+    "nuxt-vuefire": "^1.0.2",
     "radix-vue": "^1.6.2",
     "tailwind-variants": "^0.2.1",
+    "vee-validate": "^4.12.6",
     "vue": "^3.4.21",
-    "vue-router": "^4.3.0"
+    "vue-router": "^4.3.0",
+    "vue-sonner": "^1.1.2",
+    "yup": "^1.4.0"
   },
   "devDependencies": {
     "@ianvs/prettier-plugin-sort-imports": "^4.2.1",
@@ -22,6 +34,7 @@
     "@nuxtjs/tailwindcss": "^6.11.4",
     "@vueuse/nuxt": "^10.9.0",
     "nuxt-icon": "^0.6.10",
+    "postinstall": "^0.10.3",
     "prettier": "^3.2.5",
     "prettier-plugin-tailwindcss": "^0.5.13",
     "tailwindcss-animate": "^1.0.7",
