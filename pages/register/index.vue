@@ -16,7 +16,7 @@
 
           <UiDivider label="or" />
 
-          <UiButton type="button" class="w-full" variant="outline">
+          <UiButton @click="signUpWithGoogle" type="button" class="w-full" variant="outline">
             <Icon name="logos:google-icon" /> Sign up with Google
           </UiButton>
         </fieldset>
@@ -25,8 +25,14 @@
   </UiContainer>
 </template>
 
+<script lang="ts">
+  import { GoogleAuthProvider } from "firebase/auth";
+
+  export const googleAuthProvider = new GoogleAuthProvider();
+</script>
+
 <script lang="ts" setup>
-  import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
+  import { createUserWithEmailAndPassword, signInWithPopup, updateProfile } from "firebase/auth";
   import { toast } from "vue-sonner";
 
   // get auth instance
@@ -60,6 +66,30 @@
       });
     }
   });
+
+  const signUpWithGoogle = async () => {
+    const loading = toast("Loading...", {
+      description: "Creating your account",
+    });
+
+    try {
+      await signInWithPopup(auth!, googleAuthProvider);
+
+      toast.success("Account created successfully", {
+        id: loading,
+      });
+
+      // redirect to the dashboard
+      return await navigateTo("/admin/dashboard", { replace: true });
+    } catch (error: any) {
+      //show error
+      console.log(error.message);
+
+      toast.error(error.message, {
+        id: loading,
+      });
+    }
+  };
 </script>
 
 <style></style>
