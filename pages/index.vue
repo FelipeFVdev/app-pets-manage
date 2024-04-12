@@ -51,6 +51,10 @@
   import { signInWithEmailAndPassword, signInWithPopup, updateProfile } from "firebase/auth";
   import { toast } from "vue-sonner";
 
+  definePageMeta({
+    middleware: "already-logged-in",
+  });
+
   // get auth instance
   const auth = useFirebaseAuth();
 
