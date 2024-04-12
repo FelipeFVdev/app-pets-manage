@@ -21,6 +21,13 @@
           </UiButton>
         </fieldset>
       </form>
+
+      <p class="mt-10 text-center text-sm">
+        Already have an account?
+        <NuxtLink class="text-sm font-semibold text-primary hover:underline" to="/"
+          >Sign in here</NuxtLink
+        >
+      </p>
     </div>
   </UiContainer>
 </template>
@@ -53,6 +60,7 @@
 
       toast.success("Account created successfully", {
         id: loading,
+        description: "Welcome!",
       });
 
       // redirect to the dashboard

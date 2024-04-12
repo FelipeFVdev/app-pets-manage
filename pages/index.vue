@@ -16,7 +16,7 @@
           <p>
             <NuxtLink
               class="text-sm font-semibold text-primary hover:underline"
-              to="/forgort-password"
+              to="/forgot-password"
               >Forgot Password?</NuxtLink
             >
           </p>
@@ -30,6 +30,13 @@
           </UiButton>
         </fieldset>
       </form>
+
+      <p class="mt-10 text-center text-sm">
+        Don't have an account?
+        <NuxtLink class="text-sm font-semibold text-primary hover:underline" to="/register"
+          >Create one here</NuxtLink
+        >
+      </p>
     </div>
   </UiContainer>
 </template>

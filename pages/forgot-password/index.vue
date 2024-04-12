@@ -29,7 +29,7 @@
   const auth = useFirebaseAuth();
 
   const { handleSubmit, isSubmitting } = useForm({
-    validationSchema: toTypedSchema(LoginSchema),
+    validationSchema: toTypedSchema(ForgotPasswordSchema),
   });
 
   const submit = handleSubmit(async (values, ctx) => {
@@ -43,6 +43,7 @@
       });
       toast.success("Please check your email", {
         id: loading,
+        description: "We have send you instructions to reset your password!",
       });
 
       // redirect to the sign in page
